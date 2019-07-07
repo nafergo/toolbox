@@ -36,7 +36,7 @@ function getParameterByName(name, url) {
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
-params.spreadsheetKey = 'https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=1zcf8HFaI2WesW-NkawO0g6pSrg4B8R5uH1l8oMI0K-I&output=html';
+params.spreadsheetKey = 'https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=1xZXDFeLeNSazOYC9k7P_Rns0w4Ej0RAn7kJzL1KpXos&output=html';
 params.pageTitle = 'D-PAV';
 params.primaryColor = getParameterByName('primary-color');
 params.secondaryColor = getParameterByName('secondary-color');
