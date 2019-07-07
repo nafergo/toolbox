@@ -37,7 +37,7 @@ function getParameterByName(name, url) {
 }
 
 params.spreadsheetKey = 'https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=1xZXDFeLeNSazOYC9k7P_Rns0w4Ej0RAn7kJzL1KpXos&output=html';
-params.pageTitle = 'D-PAV';
+params.pageTitle = 'toolbox';
 params.primaryColor = getParameterByName('primary-color');
 params.secondaryColor = getParameterByName('secondary-color');
 
