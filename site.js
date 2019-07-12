@@ -141,7 +141,7 @@ function listLoop() {
     (function(sheet) {
 
       // name of the service, originally from the sheet name
-      serviceType = key.toString().sort();
+      serviceType = key.toString();
 
       // create a filter button for each serviceType
       createFilter(serviceType, sanitize(serviceType));
