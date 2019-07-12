@@ -138,7 +138,7 @@ function listLoop() {
     // let's run this IIFE function to keep our
     // for loop scope while we go through it
     // 'sheet' is the spreadsheet's tabulated sheet and represents list[key]
-    (function(sheet) {
+    (function.sort(sheet) {
 
       // name of the service, originally from the sheet name
       serviceType = key.toString();
