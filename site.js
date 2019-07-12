@@ -37,7 +37,7 @@ function getParameterByName(name, url) {
 }
 
 params.spreadsheetKey = 'https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=1xZXDFeLeNSazOYC9k7P_Rns0w4Ej0RAn7kJzL1KpXos&output=html';
-params.pageTitle = 'Toolbox';
+params.pageTitle = 'Nafergo Toolbox';
 params.primaryColor = getParameterByName('primary-color');
 params.secondaryColor = getParameterByName('secondary-color');
 
@@ -66,6 +66,10 @@ var getList = {
       }
     });
   }
+};
+
+/*
+callback function after the list data has
 };
 
 /*
