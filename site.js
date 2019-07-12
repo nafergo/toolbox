@@ -138,10 +138,10 @@ function listLoop() {
     // let's run this IIFE function to keep our
     // for loop scope while we go through it
     // 'sheet' is the spreadsheet's tabulated sheet and represents list[key]
-    (function.sort(sheet) {
+    (function(sheet) {
 
       // name of the service, originally from the sheet name
-      serviceType = key.toString();
+      serviceType = key.toString.sort();
 
       // create a filter button for each serviceType
       createFilter(serviceType, sanitize(serviceType));
