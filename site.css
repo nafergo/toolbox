@@ -44,16 +44,8 @@ SEARCH & FILTERS
     padding: 1px 20px;
     border-right: 1px solid #DADADA;*/
 }
-.sidebar-title {
+.sidebar-header {
     margin: -1px -20px 20px;
-    background: #4776E6;
-    color: #fff;
-    padding: 20px;
-    min-height: 79px;
-}
-
-.sidebar-subtitle {
-    margin: -20px -20px 20px;
     background: #4776E6;
     color: #fff;
     padding: 20px;
@@ -124,8 +116,6 @@ SEARCH & FILTERS
   left: .5em;
 
 }
-
-.sidebar-footer {margin-bottom: 10px; position: fixed;   bottom: 0;}
 
 
 /* + + + + + + + + + + +
