@@ -21,7 +21,7 @@ function init() {
   // } );
 
   // use this if using get.py
-  // getList.local();
+  //getList.local();
 }
 
 
@@ -36,11 +36,14 @@ function getParameterByName(name, url) {
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
+
+
 params.spreadsheetKey = 'https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=1xZXDFeLeNSazOYC9k7P_Rns0w4Ej0RAn7kJzL1KpXos&output=html';
 params.pageTitle = 'Nafergo Toolbox';
 params.primaryColor = getParameterByName('primary-color');
 params.secondaryColor = getParameterByName('secondary-color');
 
+// params.spreadsheetKey = 'https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=1xZXDFeLeNSazOYC9k7P_Rns0w4Ej0RAn7kJzL1KpXos&output=html';
 
 // var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=1zcf8HFaI2WesW-NkawO0g6pSrg4B8R5uH1l8oMI0K-I&output=html';
 
@@ -48,6 +51,7 @@ params.secondaryColor = getParameterByName('secondary-color');
 //offline  https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=1zcf8HFaI2WesW-NkawO0g6pSrg4B8R5uH1l8oMI0K-I&output=html
 //nope  https://docs.google.com/spreadsheets/d/e/2PACX-1vQvAv7rSCuqp5p5NiVDilJp7_y8w8BGh01b2iXDoqRtiyEffSxYN0BVyWpyktnZ_7BbKkBvT6_hL_Yp/pubhtml
 //nope https://docs.google.com/spreadsheets/d/1zcf8HFaI2WesW-NkawO0g6pSrg4B8R5uH1l8oMI0K-I/edit?usp=sharing
+
 
 var getList = {
   tabletop: function() {
@@ -58,7 +62,7 @@ var getList = {
   },
   local: function() {
     $.ajax({
-      url: '../list.json',
+      url: '/feeds/list/list.json',
       dataType: 'json',
       success: success,
       error: function(err) {
@@ -214,58 +218,18 @@ function handleService(service, counter) {
 
     serviceHeader.innerHTML = '<h1>' + service['Name'] + '</h1>';
     serviceHeader.innerHTML += '<p class="type">' + service['Type'] + '</p>';
-    serviceHeader.innerHTML += '<p class="text-uppercase"><small>' + service['Tags'] + '</small></p><br>';      
+    serviceHeader.innerHTML += '<p class="text-uppercase"><small>' + service['Tags'] + '</small></p><br>';
     $(requiredInfo).append(serviceHeader);
     $(requiredInfo).append(requiredInfoButtons);
-      
-//    for (key in service) {
 
-        if(service['Name']) {
-        additionalInfo.innerHTML += '<div class="name col-md-12 hidden-xs hidden-sm hidden-md hidden-lg"><strong>NAME</strong><p>' + service['Name'] + '</p></div>';
-    }        
+    for (key in service) {
+      if (service[key].length > 0 && key != 'Organization Name' && service[key] != 'N/A' && service[key] != 'N/a') {
+        additionalInfo.innerHTML += '<p class="'+key+' col-md-12"><strong>' + key + '</strong><br>' + service[key] + '</p>';
+      }
 
-        if(service['Type']) {
-        additionalInfo.innerHTML += '<div class="name col-md-12 hidden-xs hidden-sm hidden-md hidden-lg"><strong>TYPE</strong><p>' + service['Type'] + '</p></div>';
-    }        
+    }
 
-        if(service['Tags']) {
-        additionalInfo.innerHTML += '<div class="name col-md-12 hidden-xs hidden-sm hidden-md hidden-lg"><strong>TAGS</strong><p>' + service['Tags'] + '</p></div>';
-    }        
 
-        if(service['Description']) {
-        additionalInfo.innerHTML += '<div class="name col-md-12"><strong>DESCRIPTION</strong><p>' + service['Description'] + '</p></div>';
-    }        
-
-        if(service['Image']) {
-        additionalInfo.innerHTML += '<div class="name col-md-12"><strong></strong><p><img src="' + (service['Image']) + '" class="image_service"></p></div>';
-    }              
-      
-        if(service['URL']) {
-        additionalInfo.innerHTML += '<div class="name col-md-12"><strong>URL</strong><p><a href="' + (service['URL']) + '" target="_blank" class="">' + service['URL'] + '</a></p></div>';
-    }        
-      
-        if(service['Status']) {
-        additionalInfo.innerHTML += '<div class="name col-md-12 hidden-xs hidden-sm hidden-md hidden-lg"><strong>STATUS</strong><p>' + service['Status'] + '</p></div>';
-    }        
-
-        if(service['OS']) {
-        additionalInfo.innerHTML += '<div class="name col-md-12"><strong>OPERATING SYSTEM</strong><p>' + service['OS'] + '</p></div>';
-    }        
-
-        if(service['Latest release']) {
-        additionalInfo.innerHTML += '<div class="name col-md-12"><strong>LATEST RELEASE</strong><p>' + service['Latest release'] + '</p></div>';
-    }        
-
-        
-        
-        
-//      if (service[key].length > 0 && key != 'Organization Name' && service[key] != 'N/A' && service[key] != 'N/a') {
-//        additionalInfo.innerHTML += '<p class="'+key+' col-md-12"><strong>' + key + '</strong><br>' + service[key] + '</p>';
-//      }        
-        
-//    }      
-      
-      
     document.getElementById('services-list').appendChild(serviceElem);
   }
 }

@@ -44,18 +44,18 @@ SEARCH & FILTERS
     padding: 1px 20px;
     border-right: 1px solid #DADADA;*/
 }
-.sidebar .title {
+.sidebar-title {
     margin: -1px -20px 20px;
     background: #4776E6;
-    color: #fff; 
+    color: #fff;
     padding: 20px;
     min-height: 79px;
 }
 
-.sidebar .subtitle {
+.sidebar-subtitle {
     margin: -20px -20px 20px;
     background: #4776E6;
-    color: #fff; 
+    color: #fff;
     padding: 20px;
     min-height: 79px;
 }
@@ -79,7 +79,7 @@ SEARCH & FILTERS
     text-transform: uppercase;
     background: transparent;
     color: #999;
-    font-size: .7em;
+    font-size: 1em;
     letter-spacing: .1em;
     cursor: pointer;
     display: block;
@@ -97,11 +97,11 @@ SEARCH & FILTERS
 }
 .service-filter:before {
     position: absolute;
-    font-family: FontAwesome;
-    content: "\f096";
-    font-size: 2em;
-    top: 0.25em;
-    left: 0.25em;
+    content:"\e157";
+    font-family: 'Glyphicons Halflings';
+    font-weight: normal;
+    left: .5em;
+
 }
 .service-filter:hover {
     color: #777;
@@ -117,9 +117,12 @@ SEARCH & FILTERS
     transition: all 0.25s ease;
 }
 .service-filter.active:before {
-    font-family: FontAwesome;
-    content: "\f046";
-    color: white;
+  content:"\e067";
+  font-family: 'Glyphicons Halflings';
+  color: white;
+  font-weight: normal;
+  left: .5em;
+
 }
 
 .sidebar-footer {margin-bottom: 10px; position: fixed;   bottom: 0;}
